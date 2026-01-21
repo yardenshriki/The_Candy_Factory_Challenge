@@ -45,7 +45,7 @@ namespace CandyFactory
     {
         for (int i = 0; i < count; i++)
         {
-            if (std::is_same<T, char *>::value)
+            if constexpr (std::is_same_v<T, char *>)
             {
                 std::cout << items[i] << std::endl;
             }
