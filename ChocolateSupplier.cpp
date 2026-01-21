@@ -1,3 +1,5 @@
+// yarden shriki 322239526
+// lior zahavi 325082071
 #include "ChocolateSupplier.h"
 #include <iostream>
 #include <cstring>
@@ -17,24 +19,6 @@ namespace CandyFactory
         delete[] chocolateName;
         chocolateName = nullptr;
     }
-    ChocolateSupplier::ChocolateSupplier(const ChocolateSupplier &other)
-    {
-        *this = other;
-    }
-    ChocolateSupplier &ChocolateSupplier::operator=(const ChocolateSupplier &other)
-    {
-        if (this == &other)
-            return *this;
-
-        delete[] chocolateName;
-        chocolateName = nullptr;
-        if (other.chocolateName != nullptr)
-        {
-            chocolateName = new char[std::strlen(other.chocolateName) + 1];
-            std::strcpy(chocolateName, other.chocolateName);
-        }
-        return *this;
-    }
     void ChocolateSupplier::setChocolateName(const char *newName)
     {
         delete[] chocolateName;
@@ -47,6 +31,6 @@ namespace CandyFactory
     }
     void ChocolateSupplier::supplyChocolate()
     {
-        std::cout << this->chocolateName << " is now supplying chocolate!";
+        std::cout << this->chocolateName << " is now supplying chocolate!\n";
     }
 }

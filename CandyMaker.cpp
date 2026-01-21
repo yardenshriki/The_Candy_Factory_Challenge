@@ -1,16 +1,17 @@
+// yarden shriki 322239526
+// lior zahavi 325082071
 #include <iostream>
 #include "CandyMaker.h"
 #include <cstring>
 namespace CandyFactory
 {
-    CandyMaker::CandyMaker(const char* sugarSupplierName, const char* chocolateSupplierName)
-       :SugarSupplier(sugarSupplierName), ChocolateSupplier(chocolateSupplierName)
+    CandyMaker::CandyMaker(const char *sugarSupplierName, const char *chocolateSupplierName)
+        : SugarSupplier(sugarSupplierName), ChocolateSupplier(chocolateSupplierName)
     {
     }
-    void CandyMaker::makeCandy(const char* candyName)
+    void CandyMaker::makeCandy(const char *candyName)
     {
-     if (!candyName) candyName = "";
-     std::cout <<"Using sugar from " << getSugarName() << "and chocolate from"<< getChocolateName() << "to create" << candyName << "!" << std::endl;
-
+        std::cout << "Using sugar from " << getSugarName() << "and chocolate from" << getChocolateName() << "to create" << candyName << "!\n"
+                  << std::endl;
     }
 }

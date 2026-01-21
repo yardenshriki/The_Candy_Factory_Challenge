@@ -1,32 +1,37 @@
+// yarden shriki 322239526
+// lior zahavi 325082071
 #include <iostream>
 #include <cstring>
 #include "SugarSupplier.h"
 
-namespace CandyFactory {
+namespace CandyFactory
+{
 
-    SugarSupplier::SugarSupplier(const char* supplierName)
+    SugarSupplier::SugarSupplier(const char *supplierName) : supplierName(nullptr)
     {
-        if (!supplierName) 
+        if (supplierName != nullptr)
         {
-            supplierName = "" ;
+            this->supplierName = new char[std::strlen(supplierName) + 1];
+            std::strcpy(this->supplierName, supplierName);
         }
-        this->supplierName =  new char[std::strlen(supplierName)+1] ;
-        std::strcpy (this->supplierName ,supplierName);
     }
     SugarSupplier::~SugarSupplier()
     {
-        delete [] supplierName;
+        delete[] supplierName;
         supplierName = nullptr;
     }
-    void SugarSupplier::setSugarName(const char* newName) // Setter
+    void SugarSupplier::setSugarName(const char *newName) // Setter
     {
-        delete [] supplierName;
-        if (!newName){ newName= "" ;}
-        this->supplierName =  new char[std::strlen(newName)+1] ;
-        std::strcpy (this->supplierName , newName );
+        delete[] supplierName;
+        supplierName = nullptr;
+        if (newName != nullptr)
+        {
+            this->supplierName = new char[std::strlen(newName) + 1];
+            std::strcpy(this->supplierName, newName);
+        }
     }
     void SugarSupplier::supplySugar()
     {
-        std::cout << supplierName << "is now supplying sugar!"<< std::endl;
+        std::cout << supplierName << "is now supplying sugar!\n";
     }
 }

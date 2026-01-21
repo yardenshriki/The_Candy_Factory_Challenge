@@ -1,3 +1,5 @@
+// yarden shriki 322239526
+// lior zahavi 325082071
 #include "CandyBox.h"
 #include "CandyMaker.h"
 #include "SugarSupplier.h"
@@ -15,7 +17,7 @@ int main()
     box.addItem("SourLollipop");
     box.addItem("MintChoco");
     box.displayItems();
-    box.removeItem(1);
+    box.removeItem(0);
     box.displayItems();
     return 0;
 }

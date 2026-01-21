@@ -1,6 +1,8 @@
+// yarden shriki 322239526
+// lior zahavi 325082071
 #pragma once
 #include <type_traits>
-#include "stdio.h"
+#include <iostream>
 #include "cstring"
 namespace CandyFactory
 {
@@ -58,12 +60,10 @@ namespace CandyFactory
     template <typename T>
     void CandyBox<T>::displayItems() const
     {
+        std::cout << "All items in the candy box: " << std::endl;
         for (int i = 0; i < count; i++)
         {
-            if constexpr (std::is_same_v<T, char *>)
-            {
-                std::cout << items[i] << std::endl;
-            }
+            std::cout << items[i] << std::endl;
         }
     }
 }
